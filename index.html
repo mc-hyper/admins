@@ -1,115 +1,115 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>HYPER — Персонал Сервера</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="stars"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Персонал Сервера HYPER</title>
+  <!-- Подключение внешнего CSS -->
+  <link rel="stylesheet" href="staff.css">
+</head>
+<body>
 
-    <nav>
-      <div class="nav-links">
-        <a href="#founders">Основатели</a>
-        <a href="#administration">Администрация</a>
-      </div>
-      
-      <div class="donate-btns-wrapper" style="display: flex; align-items: center; gap: 15px;">
-        <a href="https://hyper-donate.easydonate.ru/" class="donate-btn" target="_blank" rel="noopener noreferrer">Приобрести донат</a>
-      </div>
-    </nav>
-
-    <div class="container">
-      <section class="hero">
-        <h1 class="server-name">HYPER</h1>
-        <p class="server-tagline">Персонал Сервера Minecraft</p>
-      </section>
-
-      <!-- Секция: Основатели -->
-      <section id="founders" class="staff-section">
-        <h2 class="section-title">Основатели</h2>
-        <div class="staff-grid">
-          <div class="staff-card">
-            <span class="staff-name">w1nston</span>
-            <span class="staff-role">Основатель-Разработчик</span>
-          </div>
-          <div class="staff-card">
-            <span class="staff-name">mister_4432</span>
-            <span class="staff-role">Основатель</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция: Специальная Администрация -->
-      <section class="staff-section">
-        <h2 class="section-title">Специальная Администрация</h2>
-        <div class="staff-grid">
-          <div class="staff-card">
-            <span class="staff-name">DedMyth</span>
-            <span class="staff-role">Специальный Администратор</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция: Главная Администрация -->
-      <section id="administration" class="staff-section">
-        <h2 class="section-title">Главная Администрация</h2>
-        <div class="staff-grid">
-          <div class="staff-card">
-            <span class="staff-name">RexFrost</span>
-            <span class="staff-role">Главный Администратор</span>
-          </div>
-          <div class="staff-card">
-            <span class="staff-name">_Shadow898_</span>
-            <span class="staff-role">Заместитель Главного Администратора</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция: Администрация (Вакантно) -->
-      <section class="staff-section">
-        <h2 class="section-title">Администрация</h2>
-        <div class="staff-grid">
-          <div class="vacancy-card">
-            <span>Вакантно</span>
-            <span>Место открыто для кандидатов</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция: Модерация (Вакантно) -->
-      <section class="staff-section">
-        <h2 class="section-title">Модерация</h2>
-        <div class="staff-grid">
-          <div class="vacancy-card">
-            <span>Вакантно</span>
-            <span>Требуется активный модератор</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция: Хелперы (Вакантно) -->
-      <section class="staff-section">
-        <h2 class="section-title">Хелперы</h2>
-        <div class="staff-grid">
-          <div class="vacancy-card">
-            <span>Вакантно</span>
-            <span>Помогайте игрокам в чате</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция: Тестеры (Вакантно) -->
-      <section class="staff-section">
-        <h2 class="section-title">Тестеры</h2>
-        <div class="staff-grid">
-          <div class="vacancy-card">
-            <span>Вакантно</span>
-            <span>Ищите баги и улучшайте сервер</span>
-          </div>
-        </div>
-      </section>
+  <!-- Верхняя навигация (СЕРАЯ) -->
+  <header class="top-nav">
+    <div class="nav-links">
+      <a href="/">Основатели</a>
+      <a href="/admin">Администрация</a>
     </div>
-  </body>
+    <!-- Кнопка доната со ссылкой -->
+    <a href="https://hyper-donate.easydonate.ru/" class="donate-btn" target="_blank">Приобрести донат</a>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1 class="server-name">HYPER</h1>
+      <p class="server-desc">Персонал Сервера Minecraft</p>
+    </div>
+
+    <!-- Основатели -->
+    <section class="role-section">
+      <h2 class="section-title">Основатели</h2>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-name">w1nston</div>
+          <div class="staff-role">Основатель-Разработчик</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-name">mister_4432</div>
+          <div class="staff-role">Основатель</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Специальная Администрация -->
+    <section class="role-section">
+      <h2 class="section-title">Специальная Администрация</h2>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-name">DedMyth</div>
+          <div class="staff-role">Специальный Администратор</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Главная Администрация -->
+    <section class="role-section">
+      <h2 class="section-title">Главная Администрация</h2>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-name">RexFrost</div>
+          <div class="staff-role">Главный Администратор</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-name">Shadow898_</div>
+          <div class="staff-role">Заместитель Главного Администратора</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Администрация (Вакансия) -->
+    <section class="role-section">
+      <h2 class="section-title">Администрация</h2>
+      <div class="staff-grid">
+        <div class="vacancy-card">
+          <h3>Вакантно</h3>
+          <p class="vacancy-desc">Место открыто для кандидатов</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модерация (Вакансия) -->
+    <section class="role-section">
+      <h2 class="section-title">Модерация</h2>
+      <div class="staff-grid">
+        <div class="vacancy-card">
+          <h3>Вакантно</h3>
+          <p class="vacancy-desc">Требуется активный модератор</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Хелперы (Вакансия) -->
+    <section class="role-section">
+      <h2 class="section-title">Хелперы</h2>
+      <div class="staff-grid">
+        <div class="vacancy-card">
+          <h3>Вакантно</h3>
+          <p class="vacancy-desc">Помогайте игрокам в чате</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тестеры (Вакансия) -->
+    <section class="role-section">
+      <h2 class="section-title">Тестеры</h2>
+      <div class="staff-grid">
+        <div class="vacancy-card">
+          <h3>Вакантно</h3>
+          <p class="vacancy-desc">Ищите баги и улучшайте сервер</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
 </html>
