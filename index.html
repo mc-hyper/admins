@@ -193,6 +193,10 @@
       const closeBtn = document.querySelector('.close-btn');
       const form = document.getElementById('application-form');
       const messageBox = document.getElementById('form-message');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
       // Функция открытия
       if(openBtn) {
@@ -225,13 +229,38 @@
           e.preventDefault(); // Останавливаем перезагрузку страницы
           
           // Здесь будет логика отправки данных
+          const role = form.elements['role'].value;
           const mcNick = form.querySelector('input[name="mc-nick"]').value;
           const discord = form.querySelector('input[name="discord"]').value;
           const reason = form.querySelector('textarea[name="reason"]').value;
 
+          const webhookUrl = 'https://hook.make.com/'
+
+          const payload = {
+      "embeds": [
+        {
+          "title": "📬 НОВАЯ ЗАЯВКА НА СЕРВЕР HYPER",
+          "color": 5793266, // Приятный сине-зеленый цвет
+          "fields": [
+            { "name": "👤 Игрок", "value": mcUser, "inline": true },
+            { "name": "🎮 Должность", "value": position, "inline": true },
+            { "name": "💬 Discord", "value": discordUser, "inline": false },
+            { "name": "📝 Опыт", "value": experience || "Нет опыта", "inline": false }
+          ],
+          "footer": { "text": "Сервер HYPER | Minecraft" },
+          "timestamp": new Date().toISOString()
+        }
+      ]
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправка...';
+
           // Имитация отправки (пока без сервера)
           messageBox.textContent = `Спасибо, \${mcNick}! Заявка отправлена. Мы свяжемся с тобой в Discord.`;
           messageBox.className = 'form-message success';
+
+          
           
           form.reset(); // Очищаем форму
           
