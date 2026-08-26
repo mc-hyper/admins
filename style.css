@@ -1,205 +1,172 @@
 :root {
-  --bg-dark: #030408;
-  --nav-bg: #eef0f3;
-  --nav-text: #2c3e50;
-  --accent-start: #2b86e0;
-  --accent-end: #4facfe;
+  --bg-dark: #0b0b0d;       /* Почти черный фон */
+  --bg-card: #1a1a20;       /* Цвет карточек персонала */
+  --nav-bg: #2b2b33;        /* СЕРЫЙ цвет навигации (вместо белого) */
+  --nav-text: #e0e0e0;      /* Светлый текст в навигации */
+  --accent-blue: #4facfe;    /* Голубой акцент */
   --text-main: #ffffff;
-  --text-muted: #a0a0b0;
-  --card-bg: #0f1118;
-  --vacancy-color: #555555; /* Цвет для слова "Вакантно" */
+  --text-muted: #a0a0a0;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-main);
-  overflow-x: hidden;
-  line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* Фон со звёздами */
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: 
-    radial-gradient(1px 1px at 20px 30px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 40px 70px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 50px 160px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 90px 40px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 130px 80px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 20px 160px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 60px 110px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 150px 190px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 190px 70px, #fff, rgba(255,255,255,0)),
-    radial-gradient(1px 1px at 240px 120px, #fff, rgba(255,255,255,0));
-  background-size: 300px 300px;
-  animation: twinkle 15s infinite linear;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.6; }
-  50% { opacity: 0.3; }
-  100% { opacity: 0.6; }
-}
-
-/* Навигация */
-nav {
-  background-color: var(--nav-bg);
-  padding: 12px 24px;
+/* --- ВЕРХНЯЯ НАВИГАЦИЯ (СЕРАЯ) --- */
+header.top-nav {
+  background-color: var(--nav-bg); /* Серый фон */
+  border-bottom: 1px solid #3a3a45;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .nav-links a {
   color: var(--nav-text);
   text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-  transition: color 0.2s;
+  margin-right: 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
-  color: var(--accent-start);
+  color: var(--accent-blue);
 }
 
-/* Кнопки */
 .donate-btn {
-  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
+  background-color: var(--accent-blue);
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-  box-shadow: 0 4px 15px rgba(43, 134, 224, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
 }
 
 .donate-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
-  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+  background-color: #3a8cf0;
 }
 
-/* Основной контент */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
+/* --- ОСНОВНОЙ КОНТЕНТ --- */
+main.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.hero {
+.page-header {
   text-align: center;
-  margin-bottom: 60px;
-}
-
-.server-name {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--text-main);
-  line-height: 1;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  text-shadow: 0 0 20px rgba(255,255,255,0.1);
-}
-
-.server-tagline {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-}
-
-/* Стили для секций персонала */
-.staff-section {
   margin-bottom: 50px;
 }
 
-.section-title {
-  font-size: 1.5rem;
-  color: var(--accent-end);
-  border-bottom: 2px solid var(--accent-start);
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  display: inline-block;
+.server-name {
+  font-size: 3rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 0 0 20px rgba(255,255,255,0.1);
+  margin-bottom: 10px;
+}
+
+.server-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* --- БЛОКИ РОЛЕЙ --- */
+.role-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: var(--accent-blue);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent-blue);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .staff-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 15px;
 }
 
 .staff-card {
-  background: var(--card-bg);
+  background-color: var(--bg-card);
   padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+  border: 1px solid #2a2a35;
+  transition: border-color 0.3s;
 }
 
 .staff-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border-color: var(--accent-blue);
 }
 
 .staff-name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 8px;
-  display: block;
+  color: white;
+  margin-bottom: 5px;
 }
 
 .staff-role {
-  font-size: 0.95rem;
-  color: var(--accent-end);
+  color: var(--text-muted);
+  font-size: 0.9rem;
   font-style: italic;
 }
 
+/* Стиль для вакантных мест */
 .vacancy-card {
-  background: rgba(255,255,255,0.03);
+  background-color: #15151a;
+  border: 1px dashed #40404a;
   text-align: center;
-  padding: 40px 20px;
-  border-radius: 12px;
-  color: var(--vacancy-color);
-  font-weight: 600;
-  border: 1px dashed var(--vacancy-color);
+  padding: 30px 20px;
+  color: #666;
 }
 
-.vacancy-card span {
-  display: block;
-  margin-top: 10px;
+.vacancy-card h3 {
+  color: #888;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.vacancy-desc {
   font-size: 0.9rem;
-  color: #777;
 }
 
-@media (max-width: 768px) {
-  .server-name { font-size: 2.5rem; }
-  .nav-links { display: none; }
-  .donate-btns-wrapper {
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  header.top-nav {
+    padding: 15px 20px;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
-  .donate-btn {
-    width: 100%;
-    text-align: center;
+  .nav-links {
+    margin-bottom: 10px;
+  }
+  .nav-links a {
+    margin: 0 15px;
   }
 }
