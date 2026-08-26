@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Персонал HYPER</title>
+  <!-- Подключаем отдельный CSS файл -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ВЕРХНЕЕ МЕНЮ -->
+  <header class="top-navbar">
+    <div class="nav-left">
+      <h1>HY<span>PER</span></h
+    <div class="nav-center">
+      <p>Персонал Сервера Minecraft</p>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="btn-donate">Приобрести донат</a>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- ОСНОВАТЕЛИ -->
+    <h2 class="section-title">Основатели</h2>
+    <div class="staff-grid">
+      
+      <!-- Карточка w1nston -->
+      <div class="staff-card">
+        <h3 class="staff-name">w1nston</h3>
+        <p class="staff-role">Основатель | Разработчик</p>
+        <div class="staff-social-links">
+          <a href="https://vk.com/vk_link_1" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-vk">VK</a>
+          <a href="https://discord.com/users/dc_id_1" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-dc">DC</a>
+        </div>
+      </div>
+
+      <!-- Карточка mister_4432 -->
+      <div class="staff-card">
+        <h3 class="staff-name">mister_4432</h3>
+        <p class="staff-role">Основатель</p>
+        <div class="staff-social-links">
+          <a href="https://vk.com/vk_link_2" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-vk">VK</a>
+          <a href="https://discord.com/users/dc_id_2" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-dc">DC</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- СПЕЦИАЛЬНАЯ АДМИНИСТРАЦИЯ -->
+    <h2 class="section-title">Специальная Администрация</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <h3 class="staff-name">DedMyth</h3>
+        <p class="staff-role">Специальный Администратор</p>
+        <div class="staff-social-links">
+          <a href="https://vk.com/vk_link_3" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-vk">VK</a>
+          <a href="https://discord.com/users/dc_id_3" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-dc">DC</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ГЛАВНАЯ АДМИНИСТРАЦИЯ -->
+    <h2 class="section-title">Главная Администрация</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <h3 class="staff-name">RexFrost</h3>
+        <p class="staff-role">Главный Администратор</p>
+        <div class="staff-social-links">
+          <a href="https://vk.com/vk_link_4" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-vk">VK</a>
+          <a href="https://discord.com/users/dc_id_4" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-dc">DC</a>
+        </div>
+      </div>
+      <div class="staff-card">
+        <h3 class="staff-name">Shadow898_</h3>
+        <p class="staff-role">Заместитель Главного Администратора</p>
+        <div class="staff-social-links">
+          <a href="https://vk.com/vk_link_5" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-vk">VK</a>
+          <a href="https://discord.com/users/dc_id_5" target="_blank" rel="noopener noreferrer" class="staff-social-link icon-dc">DC</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ВАКАНСИИ -->
+    <h2 class="section-title">Вакансии</h2>
+    <div class="staff-grid">
+      <div class="vacancy-card">
+        <h3>Администрация</h3>
+        <p>Место открыто для кандидатов. Требуется ответственность, опыт не требуется, научим помогать игрокам прямо во время вашего поста.</p>
+      </div>
+      <div class="vacancy-card">
+        <h3>Модерация</h3>
+        <p>Требуется активный модератор. Следи за порядком и помогай игрокам.</p>
+      </div>
+      <div class="vacancy-card">
+        <h3>Хелперы</h3>
+        <p>Помогайте игрокам в чате. Отличный старт для новичков в команде.</p>
+      </div>
+      <div class="vacancy-card">
+        <h3>Тестеры</h3>
+        <p>Ищите баги и улучшайте сервер. Для внимательных и технически подкованных.</p>
+      </div>
+    </div>
+
+    <!-- КНОПКА ЗАЯВКИ -->
+    <section class="apply-section">
+      <h2>Подать заявку на должность</h2>
+      <p style="color: #888; margin-bottom: 20px;">Стань частью команды HYPER и помоги развивать сервер!</p>
+      <button id="open-modal-btn" class="floating-apply-btn">Подать заявку сейчас</button>
+    </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО (СКРЫТОЕ) -->
+    <div id="application-modal" class="modal-overlay">
+      <div class="modal-window">
+        <div class="modal-header">
+          <h2>Заявка на должность</h2>
+          <span class="close-btn">&times;</span>
+        </div>
+        <form id="application-form">
+          <div class="form-group">
+            <label>Желаемая должность</label>
+            <select name="role">
+              <option value="helper">Хелпер</option>
+              <option value="tester">Тестер</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Ваш никнейм в Minecraft</label>
+            <input type="text" name="mc_nick" placeholder="Например: RexFrost" required>
+          </div>
+          <div class="form-group">
+            <label>Ваш Discord</label>
+            <input type="text" name="discord" placeholder="Например: Shadow898#1234" required>
+          </div>
+          <div class="form-group">
+            <label>Опыт работы (кратко)</label>
+            <textarea name="experience" rows="4" placeholder="Расскажите о своем опыте..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Отправить заявку</button>
+          <div class="form-message" id="form-message"></div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+<script src="admins.js"></script>
+
+</body>
+</html>
