@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYPER - Персонал</title>
+  <style>
+    /* --- БАЗОВЫЕ СТИЛИ --- */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; color: #333; }
+    .top-navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-left h1 { margin: 0; color: #2c3e50; }
+    .nav-left span { color: #e74c3c; }
+    .nav-center p { margin: 0; color: #7f8c8d; }
+    .btn-donate { background: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+
+    .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+    .section-title { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+
+    /* --- КАРТОЧКИ ПЕРСОНАЛА --- */
+    .staff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+    .staff-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+    .staff-name { margin: 0; font-size: 1.2rem; color: #2c3e50; }
+    .staff-role { color: #7f8c8d; margin: 0; font-style: italic; }
+    
+    .social-inline-buttons { display: flex; gap: 10px; }
+    .social-btn { 
+      width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; 
+      text-decoration: none; color: white; font-size: 18px; transition: transform 0.2s; cursor: pointer;
+    }
+    .social-btn:hover { transform: scale(1.1); }
+    .icon-vk { background-color: #0077FF; }
+    .icon-dc { background: linear-gradient(135deg, #5865F2, #7403E7); }
+
+    /* --- БЛОК ВАКАНСИИ --- */
+    .apply-section { background: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 50px; }
+    .floating-apply-btn {
+      background-color: #e74c3c; color: white; border: none; padding: 15px 40px;
+      font-size: 1.1rem; border-radius: 50px; cursor: pointer; margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .floating-apply-btn:hover { background-color: #c0392b; }
+
+    /* --- МОДАЛЬНОЕ ОКНО --- */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6); display: none;
+      justify-content: center; align-items: center; z-index: 1000;
+    }
+    .modal-overlay.active { display: flex; }
+    
+    .modal-window {
+      background: white; padding: 30px; width: 90%; max-width: 500px;
+      border-radius: 15px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .close-btn {
+      position: absolute; top: 15px; right: 20px; font-size: 24px;
+      cursor: pointer; color: #aaa; line-height: 1;
+    }
+    .close-btn:hover { color: #333; }
+
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;
+    }
+    .submit-btn {
+      width: 100%; padding: 12px; background-color: #27ae60; color: white;
+      border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;
+    }
+    .submit-btn:hover { background-color: #219150; }
+    .submit-btn:disabled { background-color: #95a5a6; cursor: not-allowed; }
+    
+    .form-message { margin-top: 15px; text-align: center; font-weight: bold; }
+    .success { color: #27ae60; }
+    .error { color: #e74c3c; }
+  </style>
+</head>
+<body>
+
+  <header class="top-navbar">
+    <div class="nav-left"><h1>HY<span>PER</span></h1></div>
+    <div class="nav-center"><p>Персонал Сервера Minecraft</p></div>
+    <div class="nav-right"><a href="#" class="btn-donate">Донат</a></div>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Основатели</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="card-header">
+          <h3 class="staff-name">w1nston</h3>
+          <div class="social-inline-buttons">
+            <a href="#" class="social-btn icon-vk"><svg viewBox="0 0 24 24"><path d="M15 3H9L7.5 4.5 10.5 9H8.5L6 12.5 4 15.5 2 18.5 5 19.5H19L21 17.5 19 15.5 17 13.5 15 10.5 12 6.5 15 3Z"/></svg></a>
+            <a href="#" class="social-btn icon-dc"><svg viewBox="0 0 24 24"><path d="M21 15c-1.5-1.5-3-3-6-3-1.5 0-3 1.5-6 3M3 6c3 3 6 6 12 6s9-3 12-6M7.5 13.5c1.5 1.5 3 3 6 3s4.5-1.5 6-3M9 12c1.5 1.5 3 3 4.5 3s3-1.5 4.5-3"/></svg></a>
+          </div>
+        </div>
+        <p class="staff-role">Основатель | Разработчик</p>
+      </div>
+      <div class="staff-card">
+        <div class="card-header">
+          <h3 class="staff-name">mister_4432</h3>
+          <div class="social-inline-buttons">
+            <a href="#" class="social-btn icon-vk"><svg viewBox="0 0 24 24"><path d="M15 3H9L7.5 4.5 10.5 9H8.5L6 12.5 4 15.5 2 18.5 5 19.5H19L21 17.5 19 15.5 17 13.5 15 10.5 12 6.5 15 3Z"/></svg></a>
+            <a href="#" class="social-btn icon-dc"><svg viewBox="0 0 24 24"><path d="M21 15c-1.5-1.5-3-3-6-3-1.5 0-3 1.5-6 3M3 6c3 3 6 6 12 6s9-3 12-6M7.5 13.5c1.5 1.5 3 3 6 3s4.5-1.5 6-3M9 12c1.5 1.5 3 3 4.5 3s3-1.5 4.5-3"/></svg></a>
+          </div>
+        </div>
+        <p class="staff-role">Основатель</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Администрация</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="card-header">
+          <h3 class="staff-name">DedMyth</h3>
+          <div class="social-inline-buttons">
+            <a href="#" class="social-btn icon-vk"><svg viewBox="0 0 24 24"><path d="M15 3H9L7.5 4.5 10.5 9H8.5L6 12.5 4 15.5 2 18.5 5 19.5H19L21 17.5 19 15.5 17 13.5 15 10.5 12 6.5 15 3Z"/></svg></a>
+            <a href="#" class="social-btn icon-dc"><svg viewBox="0 0 24 24"><path d="M21 15c-1.5-1.5-3-3-6-3-1.5 0-3 1.5-6 3M3 6c3 3 6 6 12 6s9-3 12-6M7.5 13.5c1.5 1.5 3 3 6 3s4.5-1.5 6-3M9 12c1.5 1.5 3 3 4.5 3s3-1.5 4.5-3"/></svg></a>
+          </div>
+        </div>
+        <p class="staff-role">Администратор</p>
+      </div>
+    </div>
+
+    <div class="apply-section">
+      <h2>Хочешь стать частью команды?</h2>
+      <p>Сейчас открыта вакансия только на роль <strong>Хелпера</strong>.</p>
+      <button id="open-modal-btn" class="floating-apply-btn">Подать заявку</button>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО -->
+  <div id="application-modal" class="modal-overlay">
+    <div class="modal-window">
+      <span class="close-btn">&times;</span>
+      <h2 style="margin-top: 0;">Заявка на должность</h2>
+      <form id="application-form">
+        <div class="form-group">
+          <label>Желаемая роль</label>
+          <select name="role" disabled>
+            <option value="хелпер">Хелпер</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Ник в Minecraft</label>
+          <input type="text" name="mc-nick" required placeholder="Например: Steve">
+        </div>
+
+        <div class="form-group">
+          <label>Discord тег</label>
+          <input type="text" name="discord" required placeholder="Например: user#1234">
+        </div>
+
+        <div class="form-group">
+          <label>Почему ты подходишь?</label>
+          <textarea name="reason" rows="4" required placeholder="Расскажи о себе..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">Отправить заявку</button>
+        <div id="form-message" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('open-modal-btn');
+      const modal = document.getElementById('application-modal');
+      const closeBtn = document.querySelector('.close-btn');
+      const form = document.getElementById('application-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const messageBox = document.getElementById('form-message');
+
+      // --- ЛОГИКА МОДАЛЬНОГО ОКНА ---
+      const openModal = () => { modal.classList.add('active'); };
+      const closeModal = () => { modal.classList.remove('active'); messageBox.textContent = ''; };
+
+      if(openBtn) openBtn.addEventListener('click', openModal);
+      if(closeBtn) closeBtn.addEventListener('click', closeModal);
+      
+      // Закрытие по клику вне окна
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      
+      // Закрытие по Esc
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      // --- ЛОГИКА ОТПРАВКИ В DISCORD (WEBHOOK) ---
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // 1. Блокируем кнопку, чтобы не нажали 10 раз
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+        messageBox.className = 'form-message';
+
+        // 2. Собираем данные
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // 3. НАСТРОЙКА: ВСТАВЬ СЮДА СВОЮ ССЫЛКУ НА WEBHOOK DISCORD
+        // Если ты вставишь это на публичный хостинг, любой сможет спамить в твой канал!
+        const DISCORD_WEBHOOK_URL = 'ВСТАВЬ_СЮДА_ССЫЛКУ_WEBHOOK'; 
+
+        if (DISCORD_WEBHOOK_URL === 'https://discordapp.com/api/webhooks/1541993157850308749/PZ5yuOxy6VZzHzonyMzXp7y_QLGklnZvp0VkopCit9hpjQlPVGImaveMgan5rdOkyJQc') {
+          messageBox.textContent = 'Ошибка: Не настроен Webhook URL в коде.';
+          messageBox.classList.add('error');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Отправить заявку';
+          return;
+        }
+
+        // 4. Формируем сообщение для Discord (Embed)
+        const payload = {
+          "embeds": [
+            {
+              "title": "🆕 Новая заявка на хелпера!",
+              "color": 5814783, // HEX код цвета (бирюзовый)
+              "fields": [
+                { "name": "Никнейм (MC)", "value": data['mc-nick'], "inline": true },
+                { "name": "Discord", "value": data['discord'], "inline": true },
+                { "name": "Мотивация", "value": data['reason'] || "Не указано" }
+              ],
+              "footer": { "text": "Сервер HYPER" },
+              "timestamp": new Date().toISOString()
+            }
+          ]
+        };
+
+        try {
+          const response = await fetch(DISCORD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (response.ok) {
+            messageBox.textContent = '✅ Заявка успешно отправлена!';
+            messageBox.classList.add('success');
+            form.reset();
+            setTimeout(closeModal, 2000);
+          } else {
+            throw new Error('Ошибка Discord API');
+          }
+        } catch (error) {
+          console.error(error);
+          messageBox.textContent = '❌ Ошибка отправки. Попробуйте позже.';
+          messageBox.classList.add('error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Отправить заявку';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
