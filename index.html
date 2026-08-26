@@ -99,9 +99,9 @@
         <div class="form-group">
           <label>Желаемая роль</label>
           <select name="role" disabled>
-            <option value="хелпер">Хелпер</option>
-            <option value="хелпер">Тестер</option>
-            <option value="хелпер">Билдер</option>
+            <option value="Хелпер">Хелпер</option>
+            <option value="Тестер">Тестер</option>
+            <option value="Билдер">Билдер</option>
           </select>
         </div>
 
@@ -116,13 +116,18 @@
         </div>
 
         <div class="form-group">
+          <label>VK Username</label>
+          <input type="text" name="vk" required placeholder="Например: @user123">
+        </div>
+
+        <div class="form-group">
           <label>Почему ты подходишь?</label>
           <textarea name="reason" rows="4" required placeholder="Расскажи о себе..."></textarea>
         </div>
 
         <button type="submit" class="submit-btn" id="submit-btn">Отправить заявку</button>
         <div id="form-message" class="form-message"></div>
-        <div>Администрация вправе отказать если нету доверия</div>
+           <div>Администрация вправе отказать если нету доверия</div>
       </form>
     </div>
   </div>
@@ -187,7 +192,8 @@
               "fields": [
                 { "name": "Никнейм (MC)", "value": data['mc-nick'], "inline": true },
                 { "name": "Discord", "value": data['discord'], "inline": true },
-                { "name": "Мотивация", "value": data['reason'] || "Не указано" }
+                { "name": "Vk", "value": data['vk'], "inline": true },
+                { "name": "Мотивация", "value": data['reason'] || "Не указано"}
               ],
               "footer": { "text": "Сервер HYPER" },
               "timestamp": new Date().toISOString()
