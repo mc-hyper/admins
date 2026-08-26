@@ -1,0 +1,381 @@
+ :root {
+  --bg-color: #0b0b10;
+  --card-bg: rgba(20, 20, 30, 0.6);
+  --primary-blue: #00a8cc;
+  --dark-blue-menu: #0f1a2b;
+  --text-main: #e0e0e0;
+  --text-muted: #888;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* === ВЕРХНЕЕ МЕНЮ (КОМПАКТНОЕ) === */
+.top-navbar {
+  background-color: var(--dark-blue-menu);
+  border-bottom: 1px solid rgba(0, 168, 204, 0.3);
+  /* Уменьшили отступы и высоту */
+  padding: 8px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.nav-left h1 {
+  margin: 0;
+  font-size: 1.4rem; /* Чуть меньше заголовок */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.nav-left h1 span {
+  color: var(--primary-blue);
+}
+
+.nav-center p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.btn-donate {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff0055, #ff5e00);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: background 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.btn-donate:hover {
+  background: linear-gradient(45deg, #ff3366, #ff7a33);
+  transform: translateY(-1px);
+}
+
+/* === КОНТЕНТ И ЗАГОЛОВКИ === */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  color: white;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--primary-blue);
+  margin-top: 5px;
+}
+
+/* === СЕТКА И КАРТОЧКИ === */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.staff-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 16px;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-blue);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.staff-name {
+  font-size: 1.25rem;
+  color: white;
+  margin: 0;
+  font-weight: 600;
+}
+
+.social-inline-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.social-btn:hover {
+  transform: scale(1.05);
+}
+
+.icon-vk { background-color: #0077FF; }
+.icon-dc { background-color: #5865F2; }
+
+.staff-role {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* === ВАКАНСИИ === */
+.vacancy-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px dashed var(--primary-blue);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #aaa;
+  position: relative;
+  overflow: hidden;
+}
+
+.vacancy-card::before {
+  content: '🆙';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1rem;
+  color: var(--primary-blue);
+  opacity: 0.7;
+}
+
+.vacancy-card h3 {
+  color: white;
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.vacancy-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.vacancy-card:hover {
+  background: rgba(0, 168, 204, 0.08);
+  border-color: #fff;
+  color: white;
+}
+
+/* === БЛОК ЗАЯВКИ === */
+.apply-section {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.apply-section h2 {
+  color: white;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+
+/* === ПЛАВАЮЩАЯ КНОПКА (ПРОСТАЯ) === */
+.floating-apply-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00f2ff;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 242, 255, 0.3);
+  transition: box-shadow 0.2s, transform 0.1s;
+  z-index: 10001;
+}
+
+.floating-apply-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 242, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.floating-apply-btn:active {
+  transform: translateY(1px);
+}
+
+/* === МОДАЛЬНОЕ ОКНО === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 10, 15, 0.9);
+  backdrop-filter: blur(6px);
+  z-index: 10002;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+}
+
+.modal-window {
+  background: rgba(20, 20, 30, 0.95);
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 440px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.modal-header h2 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #ff4444;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  color: #aaa;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-blue);
+}
+
+/* === КНОПКА ОТПРАВКИ (ПРОСТАЯ, БЕЗ ЛИШНИХ АНИМАЦИЙ) === */
+.submit-btn {
+  width: 100%;
+  background: #00f2ff;
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 242, 255, 0.3);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+  background: #00d6d6;
+  box-shadow: 0 6px 14px rgba(0, 214, 214, 0.4);
+}
+
+.submit-btn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.form-message {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+
+.form-message.success { color: #4caf50; }
+.form-message.error { color: #ff5252; }
+}

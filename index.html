@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Персонал HYPER</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admins.js" defer></script>
+</head>
+<body>
+
+  <header class="top-navbar">
+    <div class="nav-left">
+      <h1>HY<span>PER</span></h1>
+    </div>
+    <div class="nav-center">
+      <p>Персонал Сервера Minecraft</p>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="btn-donate">Донат</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <h2 class="section-title">Основатели</h2>
+    <div class="staff-grid">
+      
+      <div class="staff-card">
+        <div class="card-header">
+          <h3 class="staff-name">w1nston</h3>
+          <div class="social-inline-buttons">
+            <a href="https://vk.com/vk_link_1" target="_blank" rel="noopener noreferrer" class="social-btn icon-vk">VK</a>
+            <a href="https://discord.com/users/dc_id_1" target="_blank" rel="noopener noreferrer" class="social-btn icon-dc">DC</a>
+          </div>
+        </div>
+        <p class="staff-role">Основатель | Разработчик</p>
+      </div>
+
+      <div class="staff-card">
+        <div class="card-header">
+          <h3 class="staff-name">mister_4432</h3>
+          <div class="social-inline-buttons">
+            <a href="https://vk.com/vk_link_2" target="_blank" rel="noopener noreferrer" class="social-btn icon-vk">VK</a>
+            <a href="https://discord.com/users/dc_id_2" target="_blank" rel="noopener noreferrer" class="social-btn icon-dc">DC</a>
+          </div>
+        </div>
+        <p class="staff-role">Основатель</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Администрация</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="card-header">
+          <h3 class="staff-name">DedMyth</h3>
+          <div class="social-inline-buttons">
+            <a href="https://vk.com/vk_link_3" target="_blank" rel="noopener noreferrer" class="social-btn icon-vk">VK</a>
+            <a href="https://discord.com/users/dc_id_3" target="_blank" rel="noopener noreferrer" class="social-btn icon-dc">DC</a>
+          </div>
+        </div>
+        <p class="staff-role">Администратор</p>
+      </div>
+    </div>
+
+    <!-- Блок подачи заявки -->
+    <div class="apply-section">
+      <h2>Хочешь стать частью команды?</h2>
+      <p>Сейчас открыта вакансия только на роль <strong>Хелпера</strong>. Заполни форму — мы рассмотрим твою кандидатуру.</p>
+      <button id="open-modal-btn" class="floating-apply-btn">Подать заявку</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно -->
+  <div id="application-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2>Заявка на должность</h2>
+        <span class="close-btn">&times;</span>
+      </div>
+      <form id="application-form">
+        <div class="form-group">
+          <label>Желаемая роль</label>
+          <!-- Оставляем только Хелпера -->
+          <select name="role" disabled>
+            <option value="хелпер">Хелпер</option>
+          </select>
+          <small style="color:#888">На данный момент доступна только эта роль.</small>
+        </div>
+
+        <div class="form-group">
+          <label>Ник в Minecraft</label>
+          <input type="text" name="mc-nick" required placeholder="Например: Steve">
+        </div>
+
+        <div class="form-group">
+          <label>Discord тег</label>
+          <input type="text" name="discord" required placeholder="Например: user#1234">
+        </div>
+
+        <div class="form-group">
+          <label>Почему ты подходишь на роль хелпера?</label>
+          <textarea name="reason" rows="4" required placeholder="Расскажи о себе, опыте, почему хочешь помогать игрокам"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Отправить заявку</button>
+        <div id="form-message" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
